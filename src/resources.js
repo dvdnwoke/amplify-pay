@@ -70,13 +70,13 @@ var Subscription = function() {
   this.fetch =  function(param, callback) {
     var dummy = {}
     var url = (typeof param === 'function')
-      ? 'plan/?' + 'merchantId=' + merchantId + '&apikey=' + apikey
-      : 'plan/?PlanId=' + param.planId + '&merchantId=' + merchantId + '&apikey=' + apikey
+      ? 'merchantId=' + merchantId + '&apikey=' + apikey
+      : 'PlanId=' + param.planId + '&merchantId=' + merchantId + '&apikey=' + apikey
     var callbackFn = (typeof param === 'function') ? param : callback
     var param = (typeof param === 'function') ? dummy : param
     delete param.planId
     utils.append(param, {
-      uri: url,
+      uri: 'plan/?' + url,
       method: 'GET'
     })
     requester.setParam(param).request(callbackFn)

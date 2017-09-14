@@ -1,4 +1,4 @@
-var Amplify = require('../src/index')
+var Amplify = require('../index')
 
 Amplify = new Amplify('merchantId', 'apikey')
 
