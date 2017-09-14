@@ -20,6 +20,7 @@ var Subscription = function() {
    **/
 
   this.create = function(param, callback) {
+    if(typeof param !== 'object') throw 'Wrong Parameter type object needed'
     utils.append(param, {
       uri: 'plan',
       method: 'POST'
@@ -34,6 +35,7 @@ var Subscription = function() {
    **/
 
   this.update = function(param, callback) {
+    if(typeof param !== 'object') throw 'Wrong Parameter type object needed'
     id =  param.planId
     delete param.planId
     utils.append(param, {
@@ -49,6 +51,7 @@ var Subscription = function() {
    * @returns void
    **/
   this.delete =  function(param, callback) {
+    if(typeof param !== 'object') throw 'Wrong Parameter type object needed'
     id = param.planId
     delete param.planId
     utils.append(param, {
@@ -115,6 +118,7 @@ var Customer = function() {
    **/
 
   this.chargeReturning = function(param, callback) {
+    if(typeof param !== 'object') throw 'Wrong Parameter type object needed'
     utils.append(param, {
       uri: 'returning/charge',
       method: 'POST'
@@ -123,8 +127,9 @@ var Customer = function() {
   }
 }
 
-var Resources =  function(Id, key){
-  merchantId = Id
+var Resources =  function(id, key){
+  if(typeof id === 'undefined' || typeof key === 'undefined') throw 'missing merchantId and apikey'
+  merchantId = id
   apikey = key
   requester.apiToken({
     merchantID: merchantId,

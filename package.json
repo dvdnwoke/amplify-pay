@@ -1,5 +1,5 @@
 {
-  "name": "amplify",
+  "name": "amplify-pay",
   "version": "1.0.0",
   "description": "Nodejs API wrapper for Amplify",
   "main": "index.js",
