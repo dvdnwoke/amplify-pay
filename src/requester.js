@@ -1,5 +1,4 @@
 var request = require('request')
-const querystring = require('querystring');
 var utils =  require('./utils')
 
 var globalParam = {}
@@ -51,9 +50,8 @@ function defaultConfig() {
     baseUrl: 'https://api.amplifypay.com/merchant',
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
       'Cache-Control': 'no-cache'
-
     }
   }
 }
