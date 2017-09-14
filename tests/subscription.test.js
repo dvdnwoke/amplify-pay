@@ -25,7 +25,7 @@ test('Subscription Update test', done => {
 
 
 test('Subscription Delete test', done => {
-  Amplify.subscription.update({
+  Amplify.subscription.delete({
     planId: 63932
   }, function(body, error) {
     expect(error).toBe(false)
